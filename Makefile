@@ -29,7 +29,7 @@ TO_LINK := -ccopt -L$(CIL_OBJS)
 OCAMLFLAGS := -thread $(INCLUDES) -g $(TO_LINK) \
 	unix.cma str.cma threads.cma statfs_c.o
 OCAMLOPTFLAGS := -thread $(INCLUDES) -dtypes $(TO_LINK) \
-	unix.cmxa str.cmxa threads.cmxa statfs_c.o -g 
+	unix.cmxa str.cmxa threads.cmxa statfs_c.o 
 # add a -p to enable profiling for gprof
 
 OPT_EXT:=.exe
