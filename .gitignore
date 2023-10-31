@@ -31,3 +31,4 @@ cil/bin
 cil/obj
 cil/ocamlutil/perfcount.c
 cil/lib/Cilly.pm
+tests/*.txt
