@@ -21,10 +21,11 @@ tmp_dir=`mktemp -d -p .`
 trap "rm -rf $tmp_dir" EXIT
 cp "$1" "$tmp_dir"
 cd "$tmp_dir"
-echo "duppy -c $1" > gcc-log.txt
+echo "duppy -c $(basename $1)" > gcc-log.txt
 
-# 2) "Pre-process the source files".
+# 2) "Pre-process the source files". First, fix the paths in the scripts.
 sed -i "s|RELAYROOT=.*|RELAYROOT=$RELAY_DIR|" $RELAY_DIR/scripts/dump-with-stats.sh
+sed -i "s|RELAYROOT=.*|RELAYROOT=$RELAY_DIR|" $RELAY_DIR/scripts/dump-calls.sh
 $RELAY_DIR/scripts/dump-with-stats.sh
 
 
