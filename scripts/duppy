@@ -27,8 +27,7 @@ def addFromRootPath (filename):
     """
     absPath = os.path.realpath(filename)
     if (os.path.commonprefix ([progroot, absPath]) != progroot):
-        print >> sys.stderr, "addFromRootPath: file not in progroot (%s, %s)" \
-            % (progroot, absPath)
+        print("addFromRootPath: file not in progroot ({}, {})".format(progroot, absPath), file=sys.stderr)
         return filename
     else:
         truncated = absPath[len(progroot):]
@@ -57,7 +56,7 @@ reg = re.compile(valid_prefix + "\.cil\.c|" +
 
 for a in sys.argv[1:]:
     mat = reg.search(a)
-    if mat <> None:
+    if mat != None:
         if matched:
             print >> sys.stderr, "matched too many sources"
         else:
@@ -68,8 +67,7 @@ if (not matched) :
     print >> sys.stderr, "didn't match any sources"
 else :
     os.environ['CUR_CIL_FILE'] = addFromRootPath(curFile)
-    print >> sys.stderr, "duppy'ing %s to %s" % (os.environ['CUR_CIL_FILE'],
-                                                 os.environ['DUMPROOT'])
+    print("duppy'ing %s to %s" % (os.environ['CUR_CIL_FILE'], os.environ['DUMPROOT']), file=sys.stderr)
 
 
 

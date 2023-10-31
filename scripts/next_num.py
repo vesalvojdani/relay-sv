@@ -7,7 +7,7 @@ import sys
 
 #-- usage
 def print_usage () :
-    print 'usage: next_num file\n'
+    print('usage: next_num file\n')
     sys.exit (127)
     
 #-- main
@@ -17,11 +17,11 @@ def main () :
         print_usage ();
     else :
         filename = sys.argv[1]
-        print 'incrementing value in ' + filename + '\n'
+        print('incrementing value in ' + filename + '\n')
 
     # get value from file
     try:
-        fd = open (filename, 'rw+')
+        fd = open (filename, 'r+')
     except IOError:
         sys.stderr.write('Can\'t open file, resetting\n')
         fd = open (filename, 'w+')
