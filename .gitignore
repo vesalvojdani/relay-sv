@@ -30,5 +30,9 @@ cil/doc
 cil/bin
 cil/obj
 cil/ocamlutil/perfcount.c
+cil/config.mk
 cil/lib/Cilly.pm
+cil/bin/CilConfig.pm
+cil/bin/cilly.bat
+cil/bin/patcher.bat
 tests/*.txt
