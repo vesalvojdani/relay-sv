@@ -19,9 +19,10 @@ cp server_ip.bkup server_ip.txt
 
 tmp_dir=`mktemp -d -p .`
 trap "rm -rf $tmp_dir" EXIT
-cp "$1" "$tmp_dir"
+CFILE=$(basename ${1%.*}.c) #force file $1 to have a .c extension
+cp "$1" "$tmp_dir/$CFILE"
 cd "$tmp_dir"
-echo "duppy -c $(basename $1)" > gcc-log.txt
+echo "duppy -c $CFILE" > gcc-log.txt
 
 # 2) "Pre-process the source files". First, fix the paths in the scripts.
 sed -i "s|RELAYROOT=.*|RELAYROOT=$RELAY_DIR|" $RELAY_DIR/scripts/dump-with-stats.sh
