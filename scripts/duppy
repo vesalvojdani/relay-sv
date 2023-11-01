@@ -58,13 +58,13 @@ for a in sys.argv[1:]:
     mat = reg.search(a)
     if mat != None:
         if matched:
-            print >> sys.stderr, "matched too many sources"
+            print("matched too many sources", file=sys.stderr)
         else:
             matched = True
             curFile = mat.group(0)
             
 if (not matched) :
-    print >> sys.stderr, "didn't match any sources"
+    print("didn't match any sources", file=sys.stderr)
 else :
     os.environ['CUR_CIL_FILE'] = addFromRootPath(curFile)
     print("duppy'ing %s to %s" % (os.environ['CUR_CIL_FILE'], os.environ['DUMPROOT']), file=sys.stderr)
