@@ -24,6 +24,7 @@ autom4te.cache/
 config.log
 configure*
 server_ip.txt
+dist
 
 _opam
 cil/doc
