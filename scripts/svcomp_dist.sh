@@ -10,7 +10,7 @@ cp race_anal.exe server.exe fix_id_cg.exe scc_stats.exe \
     $DIST
 cp scripts/next_num.py scripts/dump* scripts/duppy $DIST/scripts
 cp tests/*.c $DIST/tests
-#cp README.md LICENSE simple.c $DIST
+cp README.md README.orig LICENSE $DIST
 mkdir -p $DIST/cil/obj/x86_LINUX $DIST/cil/lib $DIST/cil/bin
 cp cil/obj/x86_LINUX/cilly.* $DIST/cil/obj/x86_LINUX
 cp cil/lib/*.pm $DIST/cil/lib
@@ -18,4 +18,4 @@ cp cil/bin/cilly $DIST/cil/bin
 cat cil/bin/CilConfig.pm | sed -e "s|$ROOT|..|" > $DIST/cil/bin/CilConfig.pm
 
 cd $DIST/..
-#zip -r relay.zip relay
+zip -r relay-sv.zip relay-sv
