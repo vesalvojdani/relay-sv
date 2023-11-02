@@ -1,7 +1,7 @@
 #!/bin/sh
 #run from root directory
 ROOT=`pwd`
-DIST="dist/relay"
+DIST="dist/relay-sv"
 rm -rf $DIST
 mkdir -p $DIST/scripts $DIST/tests
 cp race_anal.exe server.exe fix_id_cg.exe scc_stats.exe \
