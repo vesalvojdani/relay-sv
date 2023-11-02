@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #-- read an integer from a text file, increment it and overwrite the old file
 
