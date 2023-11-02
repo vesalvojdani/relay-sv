@@ -7,7 +7,7 @@ if [ $# -lt 1 ]; then
     echo "Usage: run_relay.sh <file_to_analyze>"
     exit 127
 elif [ "$1" == "--version" ]; then
-    echo "Version: SV-COMP 2024 (v0.10.03)"
+    echo "Version: sv-comp24 (v0.10.03)"
     exit 0
 fi
 
