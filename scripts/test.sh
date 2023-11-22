@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ./run_relay.sh tests/18_read_write_lock.i |& tee tests/out-test0.txt
-grep -q "Beginning Thread Analysis" tests/out-test1.txt
+grep -q "Beginning Thread Analysis" tests/out-test0.txt
 if [ $? -ne 0 ]; then
   echo "Test 0 failed."
   exit 1
