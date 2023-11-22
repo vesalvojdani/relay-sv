@@ -13,11 +13,11 @@ fi
 
 cgdir=$1
 shift
-tempdir=/tmp/
+tempdir=.tmp
 
 #reserve a file to store checkpoint / status information
 function reserveCheck {
-    statusFile=`tempfile -d $tempdir -p temp.status`
+    statusFile=`mktemp -p "$tempdir" temp.status.XXXXXX`
     echo "reserved status file: $statusFile"
 }
 
